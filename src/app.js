@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { hot } from 'react-hot-loader';
+import { hot } from 'react-hot-loader/root';
 import { Provider } from 'react-redux';
 
 import store from './store';
@@ -17,4 +17,4 @@ const app = () => (
   </Provider>
 );
 
-export default hot(module)(app);
+export default hot(app);
