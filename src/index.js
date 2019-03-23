@@ -7,7 +7,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(
-  <h1>Redux Saga Boilerplate Works!!!</h1>,
-  document.getElementById('root')
-);
+import App from './app';
+
+ReactDOM.render(<App />, document.getElementById('root'));

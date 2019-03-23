@@ -56,8 +56,11 @@
     "webpack-pwa-manifest": "^4.0.0"
   },
   "dependencies": {
+    "immutable": "^4.0.0-rc.12",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-hot-loader": "^4.8.0"
+    "react-hot-loader": "^4.8.0",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1"
   }
 }
