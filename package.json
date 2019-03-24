@@ -57,11 +57,14 @@
   },
   "dependencies": {
     "@hot-loader/react-dom": "^16.8.4",
+    "connected-react-router": "^6.3.2",
+    "history": "^4.7.2",
     "immutable": "^4.0.0-rc.12",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-hot-loader": "^4.8.0",
     "react-redux": "^6.0.1",
+    "react-router-dom": "^5.0.0",
     "redux": "^4.0.1"
   }
 }
