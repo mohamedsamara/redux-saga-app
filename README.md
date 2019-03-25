@@ -27,6 +27,8 @@ npm run build
 
 - [Redux Saga](https://redux-saga.js.org/)
 
+- [Immutable](https://immutable-js.github.io/immutable-js/)
+
 - [Webpack](https://webpack.js.org/)
 
 - [SASS](https://sass-lang.com/)
