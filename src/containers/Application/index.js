@@ -13,13 +13,15 @@ export class Application extends React.Component {
   componentDidMount() {}
 
   render() {
-    const { isLoaded, onLoadApp, redirect } = this.props;
+    const { app, onLoadApp, redirect } = this.props;
 
     return (
       <div className='app' onClick={onLoadApp}>
         <h1 onClick={redirect}>Saga Application Works!</h1>
         <p>
-          {isLoaded ? 'Application is clicked' : 'Application is not clicked'}
+          {app.isAppLoaded
+            ? 'Application is clicked'
+            : 'Application is not clicked'}
         </p>
       </div>
     );
@@ -33,11 +35,9 @@ const mapDispachToProps = dispatch => {
   };
 };
 
-const mapStateToProps = state => {
-  return {
-    isLoaded: state.app.isAppLoaded
-  };
-};
+const mapStateToProps = state => ({
+  app: state.getIn(['app'])
+});
 
 export default connect(
   mapStateToProps,

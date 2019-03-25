@@ -5,10 +5,11 @@
  */
 
 import { LOAD_APP } from './constants';
+import { fromJS } from 'immutable';
 
-const initialState = {
+const initialState = fromJS({
   isAppLoaded: 0
-};
+});
 
 const applicationReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -17,6 +18,7 @@ const applicationReducer = (state = initialState, action) => {
         ...state,
         isAppLoaded: 1
       };
+
       return state;
     default:
       return state;
