@@ -13,7 +13,6 @@ import { Switch, Route } from 'react-router-dom';
 import configureStore, { history } from './configureStore';
 
 import App from './containers/Application';
-import Dashboard from './containers/Dashboard';
 import Page404 from './components/Page404';
 
 // Create redux store
@@ -25,7 +24,6 @@ const app = () => (
     <ConnectedRouter history={history}>
       <Switch>
         <Route exact path='/' component={App} />
-        <Route path='/dashboard' component={Dashboard} />
         <Route path='**' component={Page404} />
       </Switch>
     </ConnectedRouter>

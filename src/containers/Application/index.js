@@ -6,20 +6,23 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { onLoadApp } from './actions';
 import { push } from 'connected-react-router';
+import { createSelector } from 'reselect';
+
+import { onLoadApp } from './actions';
+import { selectApplicationState } from './selectors';
 
 export class Application extends React.Component {
   componentDidMount() {}
 
   render() {
-    const { app, onLoadApp, redirect } = this.props;
+    const { isAppLoaded, onLoadApp, redirect } = this.props;
 
     return (
       <div className='app' onClick={onLoadApp}>
-        <h1 onClick={redirect}>Saga Application Works!</h1>
-        <p>
-          {app.isAppLoaded
+        <h1>Saga Application Works!</h1>
+        <p onClick={redirect}>
+          {isAppLoaded
             ? 'Application is clicked'
             : 'Application is not clicked'}
         </p>
@@ -35,9 +38,12 @@ const mapDispachToProps = dispatch => {
   };
 };
 
-const mapStateToProps = state => ({
-  app: state.getIn(['app'])
-});
+const mapStateToProps = createSelector(
+  selectApplicationState(),
+  isAppLoaded => ({
+    isAppLoaded
+  })
+);
 
 export default connect(
   mapStateToProps,

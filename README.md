@@ -29,6 +29,8 @@ npm run build
 
 - [Immutable](https://immutable-js.github.io/immutable-js/)
 
+- [Reselect](https://github.com/reduxjs/reselect)
+
 - [Webpack](https://webpack.js.org/)
 
 - [SASS](https://sass-lang.com/)
