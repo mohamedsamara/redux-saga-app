@@ -34,3 +34,5 @@ npm run build
 - [Webpack](https://webpack.js.org/)
 
 - [SASS](https://sass-lang.com/)
+
+- [styled-components](https://www.styled-components.com/)

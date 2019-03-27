@@ -17,6 +17,8 @@
     "react",
     "redux",
     "redux-saga",
+    "immutable",
+    "reselect",
     "sass"
   ],
   "author": "Mohamed Samara (https://github.com/mohamedsamara)",
@@ -67,6 +69,7 @@
     "react-router-dom": "^5.0.0",
     "redux": "^4.0.1",
     "redux-immutable": "^4.0.0",
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "styled-components": "^4.2.0"
   }
 }
