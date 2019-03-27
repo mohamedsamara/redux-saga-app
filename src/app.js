@@ -15,6 +15,9 @@ import configureStore, { history } from './configureStore';
 import App from './containers/Application';
 import Page404 from './components/Page404';
 
+// Import application sass styles
+import './styles/sass/style.scss';
+
 // Create redux store
 const initialState = {};
 const store = configureStore(initialState, history);
