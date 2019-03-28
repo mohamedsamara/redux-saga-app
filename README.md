@@ -36,3 +36,5 @@ npm run build
 - [SASS](https://sass-lang.com/)
 
 - [styled-components](https://www.styled-components.com/)
+
+- [Semantic UI React](https://react.semantic-ui.com/)
