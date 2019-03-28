@@ -1,6 +1,6 @@
 /*
  *
- * Application reducer
+ * PhotoGallery reducer
  *
  */
 
@@ -9,7 +9,7 @@ import { fromJS } from 'immutable';
 
 export const initialState = fromJS({});
 
-const applicationReducer = (state = initialState, action) => {
+const photoGalleryReducer = (state = initialState, action) => {
   switch (action.type) {
     case DEFAULT_ACTION:
       return state;
@@ -18,4 +18,4 @@ const applicationReducer = (state = initialState, action) => {
   }
 };
 
-export default applicationReducer;
+export default photoGalleryReducer;

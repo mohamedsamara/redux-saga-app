@@ -1,13 +1,8 @@
 import { createSelector } from 'reselect';
-import { initialState } from './reducer';
 
-const selectApplicationContainerDomain = state =>
-  state.get('app', initialState);
+const selectApplicationDomain = state => state.get('app');
 
-const selectApplicationState = () =>
-  createSelector(
-    selectApplicationContainerDomain,
-    isAppLoaded => isAppLoaded.get('isAppLoaded')
-  );
+const selectApplication = () => createSelector(selectApplicationDomain);
 
-export { selectApplicationContainerDomain, selectApplicationState };
+export default selectApplication;
+export { selectApplicationDomain };

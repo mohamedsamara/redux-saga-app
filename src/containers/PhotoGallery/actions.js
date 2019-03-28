@@ -1,6 +1,6 @@
 /*
  *
- * Application actions
+ * PhotoGallery actions
  *
  */
 

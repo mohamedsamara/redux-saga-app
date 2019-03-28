@@ -6,46 +6,40 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { push } from 'connected-react-router';
 import { createSelector } from 'reselect';
+import { Switch, Route } from 'react-router-dom';
 
-import { onLoadApp } from './actions';
-import { selectApplicationState } from './selectors';
+import PhotoGallery from '../PhotoGallery';
+import Page404 from '../../components/Page404';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 export class Application extends React.Component {
   componentDidMount() {}
 
   render() {
-    const { isAppLoaded, onLoadApp, redirect } = this.props;
-
     return (
-      <div className='app' onClick={onLoadApp}>
-        <h1>Saga Application Works!</h1>
-        <p onClick={redirect}>
-          {isAppLoaded
-            ? 'Application is clicked'
-            : 'Application is not clicked'}
-        </p>
+      <div className='application'>
+        <Header />
+        <main className='main'>
+          <Switch>
+            <Route exact path='/' component={PhotoGallery} />
+            <Route path='**' component={Page404} />
+          </Switch>
+        </main>
+        <Footer />
       </div>
     );
   }
 }
 
 const mapDispachToProps = dispatch => {
-  return {
-    onLoadApp: () => dispatch(onLoadApp()),
-    redirect: () => dispatch(push('/home'))
-  };
+  return {};
 };
 
-const mapStateToProps = createSelector(
-  selectApplicationState(),
-  isAppLoaded => ({
-    isAppLoaded
-  })
-);
+const mapStateToProps = createSelector();
 
 export default connect(
-  mapStateToProps,
-  mapDispachToProps
+  null,
+  null
 )(Application);

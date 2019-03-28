@@ -24,12 +24,15 @@ body {
   min-height: 100vh;
 }
 
-.wrapper {
-  padding-top: 30px;
-  padding-bottom: 30px;
+html,
+body {
+  height: 100%;
+  margin: 0;
 }
 
 .main {
+  min-height: 1000px;
+  margin-top: 40px;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -106,3 +109,18 @@ h6,
   line-height: $line-height !important;
   text-transform: capitalize;
 }
+
+/* scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a68aa;
+}
+
+::-webkit-scrollbar-track {
+  background: #ccc;
+}
+/* scrollbar styles */
