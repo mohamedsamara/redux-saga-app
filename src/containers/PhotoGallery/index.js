@@ -7,24 +7,28 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { getPhotos } from './actions';
+import { selectPhotoGallery } from './selectors';
 
 export class PhotoGallery extends React.Component {
-  componentDidMount() {}
+  componentDidMount() {
+    this.props.getPhotos();
+  }
 
   render() {
-    const {} = this.props;
-
     return <div className='photo-gallery' />;
   }
 }
 
 const mapDispachToProps = dispatch => {
-  return {};
+  return {
+    getPhotos: () => dispatch(getPhotos())
+  };
 };
 
-const mapStateToProps = createSelector();
+const mapStateToProps = selectPhotoGallery();
 
 export default connect(
-  null,
-  null
+  mapStateToProps,
+  mapDispachToProps
 )(PhotoGallery);

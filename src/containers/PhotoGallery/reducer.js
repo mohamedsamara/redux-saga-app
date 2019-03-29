@@ -4,15 +4,20 @@
  *
  */
 
-import { DEFAULT_ACTION } from './constants';
+import { REQUEST_PHOTOS_SUCCESS, REQUEST_PHOTOS_FAILED } from './constants';
 import { fromJS } from 'immutable';
 
-export const initialState = fromJS({});
+export const initialState = fromJS({
+  photos: [],
+  error: ''
+});
 
 const photoGalleryReducer = (state = initialState, action) => {
   switch (action.type) {
-    case DEFAULT_ACTION:
-      return state;
+    case REQUEST_PHOTOS_SUCCESS:
+      return state.set('photos', action.photos);
+    case REQUEST_PHOTOS_FAILED:
+      return state.set('error', action.error);
     default:
       return state;
   }
