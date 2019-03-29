@@ -1,3 +1,9 @@
+/*
+ *
+ * PhotoGallery selector
+ *
+ */
+
 import { createSelector } from 'reselect';
 
 const selectPhotoGalleryDomain = () => state => state.get('gallery');

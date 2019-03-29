@@ -1,12 +1,18 @@
+/*
+ *
+ * PhotoGallery saga
+ *
+ */
+
 import { call, put, takeLatest, all } from 'redux-saga/effects';
 
 import { REQUEST_PHOTOS } from './constants';
 
 import { getPhotosSuccess, getPhotosFailed } from './actions';
 
-import api from '../../api';
+import api from '../../utils/api';
 
-export function* getPhotos() {
+function* getPhotos() {
   try {
     const response = yield call(api.gallery.getPhotos);
     yield put(getPhotosSuccess(response.data));
