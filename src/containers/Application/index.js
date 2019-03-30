@@ -22,10 +22,12 @@ export class Application extends React.Component {
       <div className='application'>
         <Header />
         <main className='main'>
-          <Switch>
-            <Route exact path='/' component={PhotoGallery} />
-            <Route path='**' component={Page404} />
-          </Switch>
+          <div className='wrapper'>
+            <Switch>
+              <Route exact path='/' component={PhotoGallery} />
+              <Route path='**' component={Page404} />
+            </Switch>
+          </div>
         </main>
         <Footer />
       </div>

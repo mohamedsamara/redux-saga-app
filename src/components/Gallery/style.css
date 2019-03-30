@@ -1,0 +1,17 @@
+.score {
+  color: #4a68aa;
+}
+
+.galleryPhoto {
+  height: 150px;
+}
+
+.photo-gallery .ui.card {
+  height: 320px;
+}
+
+@media (max-width: 600px) {
+  .photo-gallery .ui.card {
+    height: auto;
+  }
+}
