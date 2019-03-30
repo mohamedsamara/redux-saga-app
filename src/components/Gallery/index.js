@@ -11,14 +11,21 @@ import { Container, Divider, Grid } from 'semantic-ui-react';
 import style from './style.css';
 
 const Gallery = props => {
-  const { photos } = props;
+  const { photos, animatePhoto } = props;
 
-  const photoNodes = photos.map(photo => (
+  const photoNodes = photos.map((photo, index) => (
     <Grid.Column key={photo.id} mobile={16} tablet={8} computer={4}>
       <Card>
         <Image
-          src={photo.images.fixed_height_still.url}
+          src={
+            photo.isAnimated
+              ? photo.images.fixed_height.url
+              : photo.images.fixed_height_still.url
+          }
           className={style.galleryPhoto}
+          onClick={() => {
+            animatePhoto(index, photo.isAnimated ? false : true);
+          }}
         />
         <Card.Content>
           <Card.Meta>

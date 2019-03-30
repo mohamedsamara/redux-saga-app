@@ -13,6 +13,7 @@ const rotate = keyframes`
 
 const Wrapper = styled.div`
   text-align: center;
+  margin-top: 120px;
   animation: ${rotate} 5s linear infinite;
 `;
 

@@ -4,6 +4,7 @@
 
 .galleryPhoto {
   height: 150px;
+  cursor: pointer;
 }
 
 .photo-gallery .ui.card {
