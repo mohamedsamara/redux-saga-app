@@ -1,7 +1,7 @@
-/*
+/**
  *
  * PhotoGallery
- *
+ * @flow
  */
 
 import React from 'react';
@@ -12,7 +12,13 @@ import { selectPhotoGallery } from './selectors';
 
 import Gallery from '../../components/Gallery';
 
-export class PhotoGallery extends React.Component {
+type Props = {
+  animatePhoto: Function,
+  getPhotos: Function,
+  photos: Array<Object>
+};
+
+export class PhotoGallery extends React.Component<Props> {
   componentDidMount() {
     this.props.getPhotos();
   }

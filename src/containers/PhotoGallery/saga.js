@@ -15,7 +15,6 @@ import api from '../../utils/api';
 function* getPhotos() {
   try {
     const response = yield call(api.gallery.getPhotos);
-
     yield put(getPhotosSuccess(response.data));
   } catch (e) {
     yield put(getPhotosFailed(e.message));

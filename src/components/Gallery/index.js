@@ -1,7 +1,7 @@
 /**
  *
  * Gallery
- *
+ * @flow
  */
 
 import React from 'react';
@@ -10,7 +10,13 @@ import { Container, Divider, Grid } from 'semantic-ui-react';
 
 import style from './style.css';
 
-const Gallery = props => {
+type Props = {
+  animatePhoto: Function,
+  getPhotos: Function,
+  photos: Array<Object>
+};
+
+const Gallery = (props: Props) => {
   const { photos, animatePhoto } = props;
 
   const photoNodes = photos.map((photo, index) => (
