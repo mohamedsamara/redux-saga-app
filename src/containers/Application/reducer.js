@@ -4,8 +4,9 @@
  *
  */
 
-import { DEFAULT_ACTION } from './constants';
 import { fromJS } from 'immutable';
+
+import { DEFAULT_ACTION } from './constants';
 
 export const initialState = fromJS({});
 

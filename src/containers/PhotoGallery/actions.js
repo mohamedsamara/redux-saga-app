@@ -1,7 +1,7 @@
-/*
+/**
  *
  * PhotoGallery actions
- *
+ * @flow
  */
 
 import {
@@ -11,27 +11,29 @@ import {
   ANIMATE_PHOTO
 } from './constants';
 
-export function getPhotos() {
+import type { PhotosType, GalleryAction } from './types';
+
+export function getPhotos(): GalleryAction {
   return {
     type: REQUEST_PHOTOS
   };
 }
 
-export function getPhotosSuccess(photos) {
+export function getPhotosSuccess(photos: PhotosType): GalleryAction {
   return {
     type: REQUEST_PHOTOS_SUCCESS,
     photos
   };
 }
 
-export function getPhotosFailed(error) {
+export function getPhotosFailed(error): GalleryAction {
   return {
     type: REQUEST_PHOTOS_FAILED,
     error
   };
 }
 
-export function animatePhoto(index, isAnimated) {
+export function animatePhoto(index, isAnimated): GalleryAction {
   return {
     type: ANIMATE_PHOTO,
     index,

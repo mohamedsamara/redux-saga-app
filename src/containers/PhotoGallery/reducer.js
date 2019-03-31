@@ -4,12 +4,13 @@
  *
  */
 
+import { fromJS } from 'immutable';
+
 import {
   REQUEST_PHOTOS_SUCCESS,
   REQUEST_PHOTOS_FAILED,
   ANIMATE_PHOTO
 } from './constants';
-import { fromJS } from 'immutable';
 
 export const initialState = fromJS({
   photos: [],
