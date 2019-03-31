@@ -31,6 +31,8 @@ npm run build
 
 - [Reselect](https://github.com/reduxjs/reselect)
 
+- [Flow](https://flow.org/)
+
 - [Webpack](https://webpack.js.org/)
 
 - [SASS](https://sass-lang.com/)
