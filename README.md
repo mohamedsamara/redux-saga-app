@@ -33,6 +33,10 @@ npm run build
 
 - [Flow](https://flow.org/)
 
+- [Jest](https://jestjs.io/)
+
+- [Enzyme](https://airbnb.io/enzyme/)
+
 - [Webpack](https://webpack.js.org/)
 
 - [SASS](https://sass-lang.com/)

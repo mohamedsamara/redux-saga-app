@@ -21,6 +21,8 @@
     "redux-saga",
     "immutable",
     "reselect",
+    "jest",
+    "enzyme",
     "sass"
   ],
   "author": "Mohamed Samara (https://github.com/mohamedsamara)",
