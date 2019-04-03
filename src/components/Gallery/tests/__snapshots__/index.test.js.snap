@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Gallery /> should <Gallery> render correctly 1`] = `
+<div
+  className="ui center aligned container"
+>
+  <div
+    className="ui inverted stackable divided grid"
+  >
+    <div
+      className="four wide computer sixteen wide mobile eight wide tablet column"
+    >
+      <div
+        className="ui card"
+        onClick={[Function]}
+      >
+        <img
+          className="ui image galleryPhoto"
+          onClick={[Function]}
+          src="https://media2.giphy.com/media/htFUXJH5vjgIw/200_s.gif"
+        />
+        <div
+          className="content"
+        >
+          <div
+            className="meta"
+          >
+            <span
+              className="date"
+            >
+              2015-09-22 08:35:20
+            </span>
+          </div>
+          <div
+            className="description"
+          >
+            big bang theory leonard GIF
+          </div>
+        </div>
+        <div
+          className="meta"
+        >
+          <span>
+            dream-hacker.tumblr.com
+          </span>
+        </div>
+        <div
+          className="extra content"
+        >
+          <a>
+            2500033.8
+            <span
+              className="score"
+            >
+               score
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
