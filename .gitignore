@@ -8,7 +8,7 @@ package-lock.json
 # Cruft
 .DS_Store
 npm-debug.log
-.coverage
+coverage
 
 # Misc
 config.js

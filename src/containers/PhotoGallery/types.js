@@ -37,6 +37,6 @@ export type GalleryAction = {
   type: string,
   photos?: PhotosType,
   error?: string,
-  index?: string,
+  index?: number,
   isAnimated?: boolean
 };

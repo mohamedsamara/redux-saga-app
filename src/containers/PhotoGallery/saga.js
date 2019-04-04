@@ -17,7 +17,12 @@ function* getPhotos() {
     const response = yield call(api.gallery.getPhotos);
     yield put(getPhotosSuccess(response.data));
   } catch (e) {
-    yield put(getPhotosFailed(e.message));
+    let error = {
+      message: e.message,
+      isError: true
+    };
+
+    yield put(getPhotosFailed(error));
   }
 }
 

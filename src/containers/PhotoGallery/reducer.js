@@ -14,7 +14,10 @@ import {
 
 export const initialState = fromJS({
   photos: [],
-  error: ''
+  galleryError: {
+    isError: false,
+    message: ''
+  }
 });
 
 const photoGalleryReducer = (state = initialState, action) => {
@@ -22,7 +25,7 @@ const photoGalleryReducer = (state = initialState, action) => {
     case REQUEST_PHOTOS_SUCCESS:
       return state.set('photos', action.photos, action.id);
     case REQUEST_PHOTOS_FAILED:
-      return state.set('error', action.error);
+      return state.mergeIn(['galleryError'], action.error);
     case ANIMATE_PHOTO:
       return state.setIn(
         ['photos', action.index, 'isAnimated'],

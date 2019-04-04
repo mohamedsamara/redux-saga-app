@@ -8,7 +8,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { getPhotos, animatePhoto } from './actions';
-import { selectPhotoGallery } from './selectors';
+import { selectPhotoGallery, selectGalleryError } from './selectors';
+import { createStructuredSelector } from 'reselect';
 
 import Gallery from '../../components/Gallery';
 
@@ -24,6 +25,8 @@ export class PhotoGallery extends React.Component<Props> {
   }
 
   render() {
+    console.log('props are', this.props);
+
     return (
       <div className='photo-gallery'>
         <Gallery {...this.props} />
@@ -40,7 +43,10 @@ const mapDispachToProps = dispatch => {
   };
 };
 
-const mapStateToProps = selectPhotoGallery();
+const mapStateToProps = createStructuredSelector({
+  photos: selectPhotoGallery(),
+  error: selectGalleryError()
+});
 
 export default connect(
   mapStateToProps,

@@ -26,14 +26,19 @@ export function getPhotosSuccess(photos: PhotosType): GalleryAction {
   };
 }
 
-export function getPhotosFailed(error): GalleryAction {
+export function getPhotosFailed(error: string): GalleryAction {
+  console.log('error from actions', error);
+
   return {
     type: REQUEST_PHOTOS_FAILED,
     error
   };
 }
 
-export function animatePhoto(index, isAnimated): GalleryAction {
+export function animatePhoto(
+  index: number,
+  isAnimated: boolean
+): GalleryAction {
   return {
     type: ANIMATE_PHOTO,
     index,
