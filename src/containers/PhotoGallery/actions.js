@@ -27,8 +27,6 @@ export function getPhotosSuccess(photos: PhotosType): GalleryAction {
 }
 
 export function getPhotosFailed(error: string): GalleryAction {
-  console.log('error from actions', error);
-
   return {
     type: REQUEST_PHOTOS_FAILED,
     error

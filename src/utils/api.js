@@ -14,6 +14,9 @@ export default {
     getPhotos: () =>
       axios
         .get('https://api.giphy.com/v1/gifs/search?q=sport&api_key=' + apiKey)
-        .then(res => res.data)
+
+        .then(response => {
+          return response.data.data;
+        })
   }
 };

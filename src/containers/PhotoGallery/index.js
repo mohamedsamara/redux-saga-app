@@ -25,8 +25,6 @@ export class PhotoGallery extends React.Component<Props> {
   }
 
   render() {
-    console.log('props are', this.props);
-
     return (
       <div className='photo-gallery'>
         <Gallery {...this.props} />

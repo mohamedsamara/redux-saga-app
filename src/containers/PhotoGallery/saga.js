@@ -12,10 +12,11 @@ import { getPhotosSuccess, getPhotosFailed } from './actions';
 
 import api from '../../utils/api';
 
-function* getPhotos() {
+export function* getPhotos() {
   try {
     const response = yield call(api.gallery.getPhotos);
-    yield put(getPhotosSuccess(response.data));
+
+    yield put(getPhotosSuccess(response));
   } catch (e) {
     let error = {
       message: e.message,
@@ -26,6 +27,6 @@ function* getPhotos() {
   }
 }
 
-export function* PhotoGallerySaga() {
+export function* photoGallerySaga() {
   yield all([takeLatest(REQUEST_PHOTOS, getPhotos)]);
 }
