@@ -5,7 +5,7 @@
 Some basic Git commands are:
 
 ```
-$ git clone https://github.com/mohamedsamara/Redux-Saga-App.git
+$ git clone https://github.com/mohamedsamara/redux-saga-app.git
 $ cd project
 $ npm install
 
