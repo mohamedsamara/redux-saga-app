@@ -8,42 +8,36 @@ Some basic Git commands are:
 $ git clone https://github.com/mohamedsamara/redux-saga-app.git
 $ cd project
 $ npm install
-
 ```
 
 ## Start
 
 ```
 $ npm start
-
 ```
 
 ## Simple build for production
 
 ```
 $ npm run build
-
 ```
 
 ## Run the application for production
 
 ```
 $ npm run serve
-
 ```
 
 ## Run Flow for code errors
 
 ```
 $ npm run flow
-
 ```
 
 ## Run test with Jest
 
 ```
 $ npm run test
-
 ```
 
 ## Languages & tools
