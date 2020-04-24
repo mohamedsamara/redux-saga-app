@@ -12,7 +12,6 @@ import { Switch, Route } from 'react-router-dom';
 import PhotoGallery from '../PhotoGallery';
 import Page404 from '../../components/Page404';
 import Header from '../../components/Header';
-import Footer from '../../components/Footer';
 
 export class Application extends React.Component {
   componentDidMount() {}
@@ -29,7 +28,6 @@ export class Application extends React.Component {
             </Switch>
           </div>
         </main>
-        <Footer />
       </div>
     );
   }
@@ -41,7 +39,4 @@ const mapDispachToProps = dispatch => {
 
 const mapStateToProps = createSelector();
 
-export default connect(
-  null,
-  null
-)(Application);
+export default connect(null, null)(Application);

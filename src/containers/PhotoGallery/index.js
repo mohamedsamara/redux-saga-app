@@ -6,17 +6,22 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
-import { getPhotos, animatePhoto } from './actions';
-import { selectPhotoGallery, selectGalleryError } from './selectors';
-import { createStructuredSelector } from 'reselect';
+import { createSelector, createStructuredSelector } from 'reselect';
+import { Container, Loader } from 'semantic-ui-react';
 
+import { getPhotos, animatePhoto } from './actions';
+import {
+  selectPhotoGalleryLoading,
+  selectPhotoGallery,
+  selectGalleryError
+} from './selectors';
 import Gallery from '../../components/Gallery';
 
 type Props = {
   animatePhoto: Function,
   getPhotos: Function,
-  photos: Array<Object>
+  photos: Array<Object>,
+  loading: boolean
 };
 
 export class PhotoGallery extends React.Component<Props> {
@@ -27,7 +32,9 @@ export class PhotoGallery extends React.Component<Props> {
   render() {
     return (
       <div className='photo-gallery'>
-        <Gallery {...this.props} />
+        <Container>
+          {this.props.loading ? <Loader active /> : <Gallery {...this.props} />}
+        </Container>
       </div>
     );
   }
@@ -42,11 +49,9 @@ const mapDispachToProps = dispatch => {
 };
 
 const mapStateToProps = createStructuredSelector({
+  loading: selectPhotoGalleryLoading(),
   photos: selectPhotoGallery(),
   error: selectGalleryError()
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispachToProps
-)(PhotoGallery);
+export default connect(mapStateToProps, mapDispachToProps)(PhotoGallery);

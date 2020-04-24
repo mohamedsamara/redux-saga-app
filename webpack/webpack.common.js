@@ -15,36 +15,12 @@ module.exports = {
         exclude: /(node_modules)/
       },
       {
-        test: /\.(html)$/,
+        test: /\.html$/,
         exclude: /node_modules/,
         use: {
           loader: 'html-loader',
           options: { minimize: true }
         }
-      },
-      {
-        test: /\.(png|jpg|jpeg|gif|svg|ico)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: commonPaths.imagesFolder,
-              name: '[name].[hash].[ext]'
-            }
-          }
-        ]
-      },
-      {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: commonPaths.fontsFolder,
-              name: '[name].[hash].[ext]'
-            }
-          }
-        ]
       }
     ]
   },

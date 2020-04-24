@@ -207,7 +207,7 @@ const renderComponent = (props = {}) =>
   shallow(<Gallery {...props} photos={photos} />);
 
 describe('<Gallery />', () => {
-  it('should render an <Gallery> tag', () => {
+  it('should render <Gallery> tag', () => {
     const renderedComponent = renderComponent();
 
     expect(renderedComponent.exists()).toBe(true);

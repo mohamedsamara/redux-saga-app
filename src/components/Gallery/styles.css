@@ -1,0 +1,31 @@
+.gallery .score {
+  color: #4a68aa;
+}
+
+.gallery .galleryPhoto {
+  min-height: 150px;
+  max-height: 100px;
+  cursor: pointer;
+}
+
+.gallery .ui.card {
+  height: 365px;
+}
+
+.gallery .ui.card .description {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+  .gallery .ui.card {
+    height: 350px;
+  }
+}
+
+@media (max-width: 320px) {
+  .gallery .ui.card {
+    height: 370px;
+  }
+}

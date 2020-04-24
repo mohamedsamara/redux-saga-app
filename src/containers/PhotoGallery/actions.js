@@ -5,6 +5,7 @@
  */
 
 import {
+  SET_LOADING,
   REQUEST_PHOTOS,
   REQUEST_PHOTOS_SUCCESS,
   REQUEST_PHOTOS_FAILED,
@@ -12,6 +13,13 @@ import {
 } from './constants';
 
 import type { PhotosType, GalleryAction } from './types';
+
+export function setLoading(loading: boolean): GalleryAction {
+  return {
+    type: SET_LOADING,
+    loading
+  };
+}
 
 export function getPhotos(): GalleryAction {
   return {

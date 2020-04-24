@@ -4,6 +4,7 @@
  * @flow
  */
 
+export const SET_LOADING: string = 'src/PhotoGallery/SET_LOADING';
 export const REQUEST_PHOTOS: string = 'src/PhotoGallery/REQUEST_PHOTOS';
 export const REQUEST_PHOTOS_SUCCESS: string =
   'src/PhotoGallery/REQUEST_PHOTOS_SUCCESS';

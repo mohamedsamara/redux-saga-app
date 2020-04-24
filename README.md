@@ -13,11 +13,31 @@ $ npm install
 
 ## Start
 
-npm start
+```
+$ npm start
+
+```
 
 ## Simple build for production
 
-npm run build
+```
+$ npm run build
+
+```
+
+## Run the application for production
+
+```
+$ npm run serve
+
+```
+
+## Run test with Jest
+
+```
+$ npm run test
+
+```
 
 ## Languages & tools
 
@@ -39,7 +59,7 @@ npm run build
 
 - [Webpack](https://webpack.js.org/)
 
-- [SASS](https://sass-lang.com/)
+- [Sass](https://sass-lang.com/)
 
 - [styled-components](https://www.styled-components.com/)
 

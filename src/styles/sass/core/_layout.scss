@@ -113,18 +113,3 @@ h6,
   line-height: $line-height !important;
   text-transform: capitalize;
 }
-
-/* scrollbar styles */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #4a68aa;
-}
-
-::-webkit-scrollbar-track {
-  background: #ccc;
-}
-/* scrollbar styles */

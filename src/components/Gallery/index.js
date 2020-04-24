@@ -5,22 +5,22 @@
  */
 
 import React from 'react';
-import { Card, Icon, Image } from 'semantic-ui-react';
-import { Container, Divider, Grid } from 'semantic-ui-react';
+import { Divider, Grid, Card, Icon, Image } from 'semantic-ui-react';
 
-import style from './style.css';
+import styles from './styles.css';
 
 type Props = {
   animatePhoto: Function,
   getPhotos: Function,
-  photos: Array<Object>
+  photos: Array<Object>,
+  loading: boolean
 };
 
 const Gallery = (props: Props) => {
   const { photos, animatePhoto } = props;
 
   const photoNodes = photos.map((photo, index) => (
-    <Grid.Column key={photo.id} mobile={16} tablet={8} computer={4}>
+    <Grid.Column key={photo.id} mobile={8} tablet={8} computer={4}>
       <Card>
         <Image
           src={
@@ -28,26 +28,27 @@ const Gallery = (props: Props) => {
               ? photo.images.fixed_height.url
               : photo.images.fixed_height_still.url
           }
-          className={style.galleryPhoto}
+          className={styles.galleryPhoto}
           onClick={() => {
             animatePhoto(index, photo.isAnimated ? false : true);
           }}
         />
+
         <Card.Content>
           <Card.Meta>
             <span className='date'>{photo.import_datetime}</span>
           </Card.Meta>
           <Card.Description>{photo.title}</Card.Description>
+          {photo.source_tld && (
+            <Card.Meta>
+              <span>{photo.source_tld}</span>
+            </Card.Meta>
+          )}
         </Card.Content>
-        {photo.source_tld && (
-          <Card.Meta>
-            <span>{photo.source_tld}</span>
-          </Card.Meta>
-        )}
         <Card.Content extra>
           <a>
             {photo._score}
-            <span className={style.score}> score</span>
+            <span className={styles.score}> score</span>
           </a>
         </Card.Content>
       </Card>
@@ -55,11 +56,9 @@ const Gallery = (props: Props) => {
   ));
 
   return (
-    <Container textAlign='center'>
-      <Grid divided inverted stackable>
-        {photoNodes}
-      </Grid>
-    </Container>
+    <div className={styles.gallery}>
+      <Grid>{photoNodes} </Grid>
+    </div>
   );
 };
 

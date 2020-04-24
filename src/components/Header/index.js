@@ -6,15 +6,19 @@
 
 import React from 'react';
 import { Container, Menu } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+
+import styles from './styles.css';
 
 const Header = props => {
   return (
     <Menu fixed='top'>
       <Container>
-        <Menu.Item as='a' header>
-          Photo Gallery
+        <Menu.Item>
+          <Link className={styles.title} to='/'>
+            Photo Gallery
+          </Link>
         </Menu.Item>
-        <Menu.Item as='a'>Home</Menu.Item>
       </Container>
     </Menu>
   );

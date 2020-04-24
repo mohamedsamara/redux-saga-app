@@ -10,9 +10,7 @@ import Wrapper from './Wrapper';
 import Styled404 from './Styled404';
 import styles from './styles.css';
 
-const Page404 = props => {
-  console.log('props', props);
-
+const Page404 = () => {
   return (
     <Wrapper>
       <Styled404>404 Oops! You are lost.</Styled404>

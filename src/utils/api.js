@@ -1,6 +1,6 @@
 /*
  *
- * api is used to call apis using Axios which allows to make http requests from the browser.
+ * call apis using Axios
  *
  */
 
@@ -14,7 +14,6 @@ export default {
     getPhotos: () =>
       axios
         .get('https://api.giphy.com/v1/gifs/search?q=sport&api_key=' + apiKey)
-
         .then(response => {
           return response.data.data;
         })

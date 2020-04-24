@@ -12,9 +12,10 @@ const commonPaths = require('./paths');
 module.exports = {
   mode: 'production',
   output: {
-    filename: `${commonPaths.jsFolder}/[name].[hash].js`,
     path: commonPaths.outputPath,
-    chunkFilename: '[name].[chunkhash].js'
+    filename: `${commonPaths.jsFolder}/[name].[hash].js`,
+    chunkFilename: `${commonPaths.jsFolder}/[name].[chunkhash].js`,
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -41,10 +42,35 @@ module.exports = {
             loader: 'sass-loader'
           }
         ]
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg|ico)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: commonPaths.imagesFolder,
+              publicPath: 'images',
+              name: '[name].[hash].[ext]'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: commonPaths.fontsFolder,
+              publicPath: 'fonts',
+              name: '[name].[hash].[ext]'
+            }
+          }
+        ]
       }
     ]
   },
-
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
@@ -91,21 +117,21 @@ module.exports = {
     new Webpack.optimize.ModuleConcatenationPlugin(),
 
     new WebpackPwaManifest({
-      name: 'Redux Saga Boilerplate',
-      short_name: 'Redux Saga Boilerplate',
-      description: 'Redux Saga Boilerplate!',
-      background_color: '#fafafa',
-      theme_color: '#b1624d',
+      name: 'Redux Saga Application',
+      short_name: 'ReduxSagaApplication',
+      description: 'Redux Saga Application!',
+      background_color: '#fff',
+      theme_color: '#4a68aa',
       inject: true,
       ios: true,
       icons: [
         {
-          src: commonPaths.imagesPath + '/icon-512x512.png',
+          src: commonPaths.imagesPath + '/pwa.png',
           destination: commonPaths.imagesFolder,
           sizes: [72, 96, 128, 144, 192, 384, 512]
         },
         {
-          src: commonPaths.imagesPath + '/icon-512x512.png',
+          src: commonPaths.imagesPath + '/pwa.png',
           destination: commonPaths.imagesFolder,
           sizes: [120, 152, 167, 180],
           ios: true
@@ -113,7 +139,6 @@ module.exports = {
       ]
     })
   ],
-
   devtool: 'source-map',
   stats: 'errors-only',
   bail: true
