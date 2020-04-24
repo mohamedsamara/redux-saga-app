@@ -22,8 +22,8 @@
     "redux",
     "redux-saga",
     "immutable",
-    "flow",
     "reselect",
+    "flow",
     "jest",
     "enzyme",
     "sass"

@@ -2,13 +2,13 @@
 
 exports[`<Gallery /> should <Gallery> render correctly 1`] = `
 <div
-  className="ui center aligned container"
+  className="gallery"
 >
   <div
-    className="ui inverted stackable divided grid"
+    className="ui grid"
   >
     <div
-      className="four wide computer sixteen wide mobile eight wide tablet column"
+      className="four wide computer eight wide mobile eight wide tablet column"
     >
       <div
         className="ui card"
@@ -36,13 +36,13 @@ exports[`<Gallery /> should <Gallery> render correctly 1`] = `
           >
             big bang theory leonard GIF
           </div>
-        </div>
-        <div
-          className="meta"
-        >
-          <span>
-            dream-hacker.tumblr.com
-          </span>
+          <div
+            className="meta"
+          >
+            <span>
+              dream-hacker.tumblr.com
+            </span>
+          </div>
         </div>
         <div
           className="extra content"
@@ -58,6 +58,7 @@ exports[`<Gallery /> should <Gallery> render correctly 1`] = `
         </div>
       </div>
     </div>
+     
   </div>
 </div>
 `;

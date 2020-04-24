@@ -21,7 +21,7 @@ const selectPhotoGallery = () =>
 
 const selectGalleryError = () =>
   createSelector(selectPhotoGalleryDomain, galleryErrorState =>
-    galleryErrorState.get('galleryError')
+    galleryErrorState.get('galleryError').toJS()
   );
 
 export {

@@ -1,9 +1,9 @@
 import regeneratorRuntime from 'regenerator-runtime';
 
-import { put, takeLatest, all, call } from 'redux-saga/effects';
+import { put, takeLatest, all, call, delay } from 'redux-saga/effects';
 
 import { photoGallerySaga, getPhotos } from '../saga';
-import { getPhotosSuccess } from '../actions';
+import { getPhotosSuccess, setLoading } from '../actions';
 import { REQUEST_PHOTOS } from '../constants';
 
 import api from '../../../utils/api';
@@ -20,6 +20,16 @@ describe('getPhotos Saga', () => {
     );
   });
 
+  it('should dispatch setLoading action before getPhotos api', () => {
+    const putDescriptor = getPhotosGenerator.next().value;
+    expect(putDescriptor).toEqual(put(setLoading(true)));
+  });
+
+  it('should have delay before getPhotos api', () => {
+    const putDescriptor = getPhotosGenerator.next().value;
+    expect(putDescriptor).toEqual(delay(2000));
+  });
+
   it('should call function to fetch getPhotos api', () => {
     const putDescriptor = getPhotosGenerator.next().value;
     expect(putDescriptor).toEqual(call(api.gallery.getPhotos));
@@ -29,5 +39,10 @@ describe('getPhotos Saga', () => {
     const response = photosData;
     const putDescriptor = getPhotosGenerator.next(response).value;
     expect(putDescriptor).toEqual(put(getPhotosSuccess(response)));
+  });
+
+  it('should dispatch setLoading action after getPhotos api', () => {
+    const putDescriptor = getPhotosGenerator.next().value;
+    expect(putDescriptor).toEqual(put(setLoading(false)));
   });
 });

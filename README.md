@@ -32,6 +32,13 @@ $ npm run serve
 
 ```
 
+## Run Flow for code errors
+
+```
+$ npm run flow
+
+```
+
 ## Run test with Jest
 
 ```
